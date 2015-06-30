@@ -1,0 +1,16 @@
+body {
+	font-size: 16px;
+}
+
+#empty {
+	color: lightgrey;
+	font-style: italic; 
+}
+
+#item-description {
+	resize: none;
+}
+
+.completed {
+	text-decoration: line-through;
+}

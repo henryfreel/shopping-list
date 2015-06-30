@@ -1,0 +1,44 @@
+<html>
+<head>
+
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<title>Shopping App</title>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h1 class="text-center">Shopping App</h1>
+				<hr>
+				<form class="text-center" id="new-item">
+					<div class="form-group">
+						<input type="text" class="form-control" id="item-name" placeholder="What would you like to buy?" autofocus>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="3" id="item-description" placeholder="Add a little detail"></textarea>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-success" value="Add to the list!">
+					</div>
+				</form>
+				<hr>
+				<ul id="list">
+					<li id="empty">No Items, type one in above to start shopping!</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- custom JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
