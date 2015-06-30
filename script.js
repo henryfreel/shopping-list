@@ -2,8 +2,8 @@ $(function() {
 
 	var $newItem = $("#new-item");
 	var $itemName = $("#item-name");
-	var $list = $("#list")
 	var $itemDescription = $("#item-description")
+	var $list = $("#list")
 
     $itemDescription.keypress(function (e) {
         if(e.which == 13) {
@@ -23,24 +23,29 @@ $(function() {
 
     });
 
-	// $newItem.submit(function() {
-		// don't don't do this kind of declatation
-	// });
-
 	$itemName.prop('required',true);
 	$itemDescription.prop('required',true);
 
-	$newItem.on("submit", function(event) {
+	$newItem.on("submit", $newItem, function(event) {
 		event.preventDefault();
+
+		var toDoName = $("#item-name").val();
+		var toDoDescription = $("#item-description").val();
+		var toDoData = {name : toDoName, description : toDoDescription};
+
+		items.push(toDoData);
+
 		$("#empty").hide();
 		$itemName.focus();
+
 		// $list.append("<li>"+$itemName.val()+"</li>");
-		items.push({name : $itemName.val(), description : $itemDescription.val()})
 		$itemName.val("");
 		// $list.append("<ul><li>"+$itemDescription.val()+"</li></ul>");
 		$itemDescription.val("");
-	});
 
+		// items.push({name : $itemName.val(), description : $itemDescription.val()});
+		console.log(items);
+	});
 
 	$("#list").on("click", "li", function(event) {
 		event.preventDefault();
